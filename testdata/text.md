@@ -1,4 +1,4 @@
-Determinisitic result is important!
+Determinisitic result is important.
 
 colour # <= Check -locale
 
@@ -8,4 +8,4 @@ varius
 
 A abd B
 
-It SHOUL be A
+It SHOUL be A!
