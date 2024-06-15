@@ -27,6 +27,7 @@ typos ${INPUT_TYPOS_FLAGS} --format json |
     -filter-mode="${INPUT_FILTER_MODE}" \
     -fail-on-error="${INPUT_FAIL_ON_ERROR}" \
     -level="${INPUT_LEVEL}" \
+    -tee \
     ${INPUT_REVIEWDOG_FLAGS}
 exit_code=$?
 echo '::endgroup::'
