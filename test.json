@@ -1,0 +1,8 @@
+{"type":"binary_file","path":"./doghouse/appengine/static/favicon.ico"}
+{"type":"typo","path":"./diff/parse_test.go","line_num":16,"byte_offset":1044,"typo":"varius","corrections":["various"]}
+{"type":"typo","path":"./diff/parse_test.go","line_num":16,"byte_offset":2487,"typo":"varius","corrections":["various"]}
+{"type":"typo","path":"./diff/parse_test.go","line_num":16,"byte_offset":3501,"typo":"varius","corrections":["various"]}
+{"type":"typo","path":"./diff/parse_test.go","line_num":16,"byte_offset":4803,"typo":"varius","corrections":["various"]}
+{"type":"typo","path":"./diff/parse_test.go","line_num":16,"byte_offset":6246,"typo":"varius","corrections":["various"]}
+{"type":"typo","path":"./diff/parse_test.go","line_num":16,"byte_offset":7260,"typo":"varius","corrections":["various"]}
+{"type":"typo","path":"./cmd/reviewdog/main.go","line_num":150,"byte_offset":60,"typo":"abd","corrections":["and"]}

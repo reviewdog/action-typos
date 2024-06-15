@@ -17,3 +17,14 @@ jobs:
           version_name: reviewdog_version
           repo: reviewdog/reviewdog
           labels: "bump:minor"
+
+  typos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: reviewdog/action-depup/with-pr@v1
+        with:
+          file: script.sh
+          version_name: TYPOS_VERSION
+          repo: crate-ci/typos/
+          labels: "bump:minor"
