@@ -12,8 +12,8 @@ export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 echo '::group::🐶 Installing typos ... https://github.com/crate-ci/typos'
 TEMP_PATH="$(mktemp -d)"
 PATH="${TEMP_PATH}:$PATH"
-wget -O - -q https://raw.githubusercontent.com/crate-ci/gh-install/057430d007bc58dc624003c9af8ff9cf1f747c66/v1/install.sh \
-  | sh -s -- --tag "${TYPOS_VERSION}" --git crate-ci/typos --target x86_64-unknown-linux-musl --to "${TEMP_PATH}" 
+wget -O - -q https://raw.githubusercontent.com/crate-ci/gh-install/057430d007bc58dc624003c9af8ff9cf1f747c66/v1/install.sh |
+  sh -s -- --tag "${TYPOS_VERSION}" --git crate-ci/typos --target x86_64-unknown-linux-musl --to "${TEMP_PATH}"
 echo '::endgroup::'
 
 echo '::group:: Running typos with reviewdog 🐶 ...'
