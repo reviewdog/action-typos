@@ -1,7 +1,7 @@
 . as $item |
 if .type == "typo" then
   {
-    "message": ("Typo: " + .typo + " -> " + (.corrections | join(", "))),
+    "message": ("`" + .typo + "` should be `" + (.corrections | join("`, `")) + "`"),
     "location": {
       "path": .path,
       "range": {
