@@ -1,32 +1,19 @@
-# action-composite-template
+# action-typos
 
-<!-- TODO: replace reviewdog/action-composite-template with your repo name -->
-[![Test](https://github.com/reviewdog/action-composite-template/workflows/Test/badge.svg)](https://github.com/reviewdog/action-composite-template/actions?query=workflow%3ATest)
-[![reviewdog](https://github.com/reviewdog/action-composite-template/workflows/reviewdog/badge.svg)](https://github.com/reviewdog/action-composite-template/actions?query=workflow%3Areviewdog)
-[![depup](https://github.com/reviewdog/action-composite-template/workflows/depup/badge.svg)](https://github.com/reviewdog/action-composite-template/actions?query=workflow%3Adepup)
-[![release](https://github.com/reviewdog/action-composite-template/workflows/release/badge.svg)](https://github.com/reviewdog/action-composite-template/actions?query=workflow%3Arelease)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/reviewdog/action-composite-template?logo=github&sort=semver)](https://github.com/reviewdog/action-composite-template/releases)
+[![Test](https://github.com/reviewdog/action-typos/workflows/Test/badge.svg)](https://github.com/reviewdog/action-typos/actions?query=workflow%3ATest)
+[![reviewdog](https://github.com/reviewdog/action-typos/workflows/reviewdog/badge.svg)](https://github.com/reviewdog/action-typos/actions?query=workflow%3Areviewdog)
+[![depup](https://github.com/reviewdog/action-typos/workflows/depup/badge.svg)](https://github.com/reviewdog/action-typos/actions?query=workflow%3Adepup)
+[![release](https://github.com/reviewdog/action-typos/workflows/release/badge.svg)](https://github.com/reviewdog/action-typos/actions?query=workflow%3Arelease)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/reviewdog/action-typos?logo=github&sort=semver)](https://github.com/reviewdog/action-typos/releases)
 [![action-bumpr supported](https://img.shields.io/badge/bumpr-supported-ff69b4?logo=github&link=https://github.com/haya14busa/action-bumpr)](https://github.com/haya14busa/action-bumpr)
 
-![github-pr-review demo](https://user-images.githubusercontent.com/3797062/73162963-4b8e2b00-4132-11ea-9a3f-f9c6f624c79f.png)
-![github-pr-check demo](https://user-images.githubusercontent.com/3797062/73163032-70829e00-4132-11ea-8481-f213a37db354.png)
+![github-pr-review demo](https://github.com/reviewdog/action-typos/assets/3797062/c1870265-079c-477e-96af-92683bc1998c)
 
-<!-- TODO: outline your action here -->
-This is a template repository for
-[reviewdog](https://github.com/reviewdog/reviewdog) action with release
-automation based on [action composition](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action).
-Click `Use this template` button to create your reviewdog action :dog:!
-
-If you want to create your own reviewdog action from scratch without using this
-template, please check and copy release automation flow.
-It's important to manage release workflow and sync reviewdog version for all
-reviewdog actions.
-
-This repo contains a sample action to run [misspell](https://github.com/client9/misspell).
+This action runs [crate-ci/typos](https://github.com/crate-ci/typos) with reviewdog on pull requests to improve code review experience.
+You can include suggested typo fix as shown the above example.
 
 ## Input
 
-<!-- TODO: replace `<linter-name>` with yours -->
 ```yaml
 inputs:
   github_token:
@@ -38,13 +25,13 @@ inputs:
   ### Flags for reviewdog ###
   tool_name:
     description: 'Tool name to use for reviewdog reporter.'
-    default: '<linter-name>'
+    default: 'typos'
   level:
     description: 'Report level for reviewdog [info,warning,error].'
     default: 'error'
   reporter:
     description: 'Reporter of reviewdog command [github-check,github-pr-review,github-pr-check].'
-    default: 'github-check'
+    default: 'github-pr-review'
   filter_mode:
     description: |
       Filtering mode for the reviewdog command [added,diff_context,file,nofilter].
@@ -58,33 +45,24 @@ inputs:
   reviewdog_flags:
     description: 'Additional reviewdog flags.'
     default: ''
-  ### Flags for <linter-name> ###
-  locale:
-    description: '-locale flag of misspell. (US/UK)'
+  ### Flags for typos ###
+  typos_flags:
+    description: 'flags for typos'
     default: ''
 ```
 
 ## Usage
-<!-- TODO: replace reviewdog/action-composite-template with your repo name -->
 
 ```yaml
 name: reviewdog
 on: [pull_request]
 jobs:
-  # TODO: replace `linter_name` and `<linter-name>` with yours
   linter_name:
-    name: runner / <linter-name>
+    name: runner / typos
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: reviewdog/action-composite-template@v1
-        with:
-          github_token: ${{ secrets.github_token }}
-          # Change reviewdog reporter if you need [github-check,github-pr-review,github-pr-check].
-          reporter: github-pr-review
-          # Change reporter level if you need.
-          # GitHub Status Check won't become failure with warning.
-          level: warning
+      - uses: reviewdog/actions-typos@v1
 ```
 
 ## Development
