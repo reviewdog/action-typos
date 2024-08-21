@@ -62,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: reviewdog/actions-typos@v1
+      - uses: reviewdog/action-typos@v1
 ```
 
 ## Development
