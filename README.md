@@ -79,12 +79,12 @@ jobs:
 ### Release
 
 #### [haya14busa/action-bumpr](https://github.com/haya14busa/action-bumpr)
-You can bump version on merging Pull Requests with specific labels (bump:major,bump:minor,bump:patch).
-Pushing tag manually by yourself also work.
+You can bump version on merging Pull Requests with specific labels (`bump:major`,`bump:minor`,`bump:patch`).
+Pushing tag manually by yourself also works.
 
 #### [haya14busa/action-update-semver](https://github.com/haya14busa/action-update-semver)
 
-This action updates major/minor release tags on a tag push. e.g. Update v1 and v1.2 tag when released v1.2.3.
+This action updates major/minor release tags on a tag push. e.g. Update `v1` and `v1.2` tag when released `v1.2.3`.
 ref: https://help.github.com/en/articles/about-actions#versioning-your-action
 
 ### Lint - reviewdog integration
