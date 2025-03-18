@@ -70,8 +70,8 @@ jobs:
     name: runner / typos
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: reviewdog/action-typos@v1
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: reviewdog/action-typos@627388e238f182b925d9acd151432f9b68f1d666 # v1.17.2
 ```
 
 ## Development
