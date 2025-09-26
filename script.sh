@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-TYPOS_VERSION=v1.30.2
+TYPOS_VERSION=v1.36.3
 
 if [ -n "${GITHUB_WORKSPACE}" ]; then
   cd "${GITHUB_WORKSPACE}/${INPUT_WORKDIR}" || exit
