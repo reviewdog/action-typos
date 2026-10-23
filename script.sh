@@ -2,6 +2,9 @@
 set -e
 
 TYPOS_VERSION=v1.38.1
+if [ -n "${INPUT_TYPOS_VERSION}" ]; then
+  TYPOS_VERSION="v${INPUT_TYPOS_VERSION#v}"
+fi
 
 if [ -n "${GITHUB_WORKSPACE}" ]; then
   cd "${GITHUB_WORKSPACE}/${INPUT_WORKDIR}" || exit
@@ -14,6 +17,7 @@ TEMP_PATH="$(mktemp -d)"
 PATH="${TEMP_PATH}:$PATH"
 wget -O - -q https://raw.githubusercontent.com/crate-ci/gh-install/057430d007bc58dc624003c9af8ff9cf1f747c66/v1/install.sh |
   sh -s -- --tag "${TYPOS_VERSION}" --git crate-ci/typos --target x86_64-unknown-linux-musl --to "${TEMP_PATH}"
+typos --version
 echo '::endgroup::'
 
 echo '::group:: Running typos with reviewdog 🐶 ...'
