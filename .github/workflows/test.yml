@@ -16,6 +16,18 @@ jobs:
           reporter: github-check
           level: info
 
+  test-typos-version:
+    name: runner / typos (typos_version)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: ./
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-check
+          level: info
+          typos_version: 1.30.2
+
   test-pr-check:
     if: github.event_name == 'pull_request'
     name: runner / typos (github-pr-check)
