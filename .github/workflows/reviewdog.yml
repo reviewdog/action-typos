@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.2
-      - uses: reviewdog/action-misspell@v1.26.2
+      - uses: reviewdog/action-misspell@v1.30.4
         with:
           reporter: github-check
           level: warning
