@@ -21,7 +21,7 @@ workflows:
         - 'reviewdog/action-alex@v1.15.3'
         - 'reviewdog/action-misspell@v1.30.4'
         - 'reviewdog/action-shellcheck@v1.29.1'
-        - 'reviewdog/action-shfmt@v1.0.2'
+        - 'reviewdog/action-shfmt@v1.1.0'
     '.github/workflows/test.yml':
         - 'actions/checkout@v4.2.2'
         - 'reviewdog/action-setup@v1.3.2'
@@ -106,16 +106,16 @@ dependencies:
         repo_id: 211116201
         uses:
             - 'reviewdog/action-setup@v1'
-    'reviewdog/action-shfmt@v1.0.2':
-        ref: 'v1.0.2'
-        commit: 'sha1-f59386f08bd9a24ac1a746e69f026ddc2ed06710'
+    'reviewdog/action-shfmt@v1.1.0':
+        ref: 'v1.1.0'
+        commit: 'sha1-c5e3ba7497c338866921924691aef4fa18bc1fe0'
         owner_id: 48765237
         repo_id: 408508624
         uses:
-            - 'reviewdog/action-suggester@v1'
-    'reviewdog/action-suggester@v1':
-        ref: 'v1'
-        commit: 'sha1-ac5ce6d94e35c00530447dc63c271e38e4fd36c6'
+            - 'reviewdog/action-suggester@2558ba17e65a9039e73764a73009fc05fef28a46'
+    'reviewdog/action-suggester@2558ba17e65a9039e73764a73009fc05fef28a46':
+        ref: 'v1.24.3'
+        commit: 'sha1-2558ba17e65a9039e73764a73009fc05fef28a46'
         owner_id: 48765237
         repo_id: 284627247
         uses:
