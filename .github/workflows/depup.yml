@@ -10,7 +10,7 @@ jobs:
   reviewdog:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v7.0.1
       - uses: reviewdog/action-depup/with-pr@v1.6.4
         with:
           file: action.yml
@@ -21,7 +21,7 @@ jobs:
   typos:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v7.0.1
       - uses: reviewdog/action-depup/with-pr@v1.6.4
         with:
           file: script.sh
