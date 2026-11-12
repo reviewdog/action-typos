@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-TYPOS_VERSION=v1.38.1
+TYPOS_VERSION=v1.52.2
 if [ -n "${INPUT_TYPOS_VERSION}" ]; then
   TYPOS_VERSION="v${INPUT_TYPOS_VERSION#v}"
 fi
