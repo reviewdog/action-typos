@@ -58,6 +58,11 @@ inputs:
   typos_flags:
     description: 'flags for typos'
     default: ''
+  typos_version:
+    description: |
+      typos version to install (e.g. v1.38.1).
+      Default is the version pinned by this action.
+    default: ''
 ```
 
 ## Usage
